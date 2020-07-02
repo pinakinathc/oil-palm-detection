@@ -1,0 +1,8 @@
+sample_images/
+*.JPG
+*.jpg
+*.png
+*.PNG
+*__pycache__*
+*.tar.gz
+*.zip
