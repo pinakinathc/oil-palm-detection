@@ -34,7 +34,7 @@ the proposed method is effective and better than SOTA methods.
 
 - ```git clone https://github.com/pinakinathc/oil-palm-detection.git```
 
-- ``````conda env create -f environment.yml```
+- ```conda env create -f environment.yml```
 
 - Go to ```ggvf_gvf``` directory using ```cd ggvf_gvf/```
 
