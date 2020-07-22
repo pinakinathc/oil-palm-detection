@@ -1,0 +1,24 @@
+name: shiva_accv
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.6
+  - tqdm
+  - ipython
+  - matplotlib
+  - pillow
+  - numpy
+  - scikit-image
+  - pycocotools
+  - tensorboard
+  - spyder-line-profiler
+  - torchvision
+  - pytorch
+  - protobuf
+  - numba
+  - terminaltables
+  - tensorflow=1.15
+prefix: /home/pinaki/miniconda3/envs/shiva_accv
+

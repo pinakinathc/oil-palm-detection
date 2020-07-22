@@ -14,7 +14,14 @@ from utils import (get_dominant_from_gvf, get_diagonal_edges,
 
 def main(image_path, args):
     image_name = os.path.split(image_path)[-1]
-    img = cv2.imread(image_path, 0)
+    img_color = cv2.imread(image_path)
+    H, W, _ = img_color.shape
+    large_edge = max(H, W)
+    max_edge = min(large_edge, 500) # Max Edge shouldn't be more than 500 pixels
+    aspect_ratio = max_edge / float(large_edge)
+    img_color = cv2.resize(img_color, (0,0), fx=aspect_ratio, fy=aspect_ratio)
+    H, W, _ = img_color.shape
+    img = cv2.cvtColor(img_color, cv2.COLOR_BGR2GRAY)
     canny_edges = cv2.Canny(img, 100, 200)
 
     # Calculate GVF
@@ -39,48 +46,54 @@ def main(image_path, args):
 
     # Get Tree Regions from these points
     selected_regions, radius_lines = get_selected_regions(edge_interpolation, img)
+
+    print (selected_regions.shape, img_color.shape)
+    final_img = np.zeros((H, W, 4), np.uint8)
+    final_img[:,:,:3] = img_color
+    final_img[:,:,3] = selected_regions
+    cv2.imwrite(os.path.join(args.vis_save_path, image_name[:-4]+'.png'), final_img)
     
-    intersect_points_tmp = [elem["end"] for elem in edge_interpolation]
-    intersect_points = []
-    for point in intersect_points_tmp:
-        if point not in intersect_points:
-            intersect_points.append(point)
+    # intersect_points_tmp = [elem["end"] for elem in edge_interpolation]
+    # intersect_points = []
+    # for point in intersect_points_tmp:
+    #     if point not in intersect_points:
+    #         intersect_points.append(point)
 
-    x = [ele[0] for ele in intersect_points]
-    y = [ele[1] for ele in intersect_points]
+    # x = [ele[0] for ele in intersect_points]
+    # y = [ele[1] for ele in intersect_points]
 
-    px = []
-    py = []
-    for i in range(diagonal_edges.shape[0]):
-        for j in range(diagonal_edges.shape[1]):
-            if diagonal_edges[i,j] > 0:
-                px.append(j)
-                py.append(i)
+    # px = []
+    # py = []
+    # for i in range(diagonal_edges.shape[0]):
+    #     for j in range(diagonal_edges.shape[1]):
+    #         if diagonal_edges[i,j] > 0:
+    #             px.append(j)
+    #             py.append(i)
 
-    plt.imshow(img, cmap='gray')
-    plt.scatter(px, py, marker='.', c='blue')
-    plt.scatter(x, y, marker='+', s=77, c='red')
-    for [[cx,cy], [x,y]] in radius_lines:
-        plt.arrow(cx, cy, x-cx, y-cy, head_width=3, length_includes_head=True, color='yellow')
+    # plt.imshow(img, cmap='gray')
+    # plt.scatter(px, py, marker='.', c='blue')
+    # plt.scatter(x, y, marker='+', s=77, c='red')
+    # for [[cx,cy], [x,y]] in radius_lines:
+    #     plt.arrow(cx, cy, x-cx, y-cy, head_width=3, length_includes_head=True, color='yellow')
 
-    plt.show()
-    # plt.savefig(os.path.join(args.vis_save_path, image_name[:-4]+'_image.jpg'))
-    plt.clf()
+    # plt.show()
+    # # plt.savefig(os.path.join(args.vis_save_path, image_name[:-4]+'_image.jpg'))
+    # plt.clf()
 
-    plt.imshow(255 - intersections, cmap='gray')
-    plt.show()
-    # plt.savefig(os.path.join(args.vis_save_path, image_name[:-4]+'_lines.jpg'))
-    plt.clf()
+    # plt.imshow(255 - intersections, cmap='gray')
+    # plt.show()
+    # # plt.savefig(os.path.join(args.vis_save_path, image_name[:-4]+'_lines.jpg'))
+    # plt.clf()
 
-    plt.imshow(255 - diagonal_edges, cmap='gray')
-    plt.scatter(x, y, marker='+', s=77, c='red')
-    plt.show()
-    # plt.savefig(os.path.join(args.vis_save_path, image_name[:-4]+'_intersection.jpg'))
-    plt.clf()
+    # plt.imshow(255 - diagonal_edges, cmap='gray')
+    # plt.scatter(x, y, marker='+', s=77, c='red')
+    # plt.show()
+    # # plt.savefig(os.path.join(args.vis_save_path, image_name[:-4]+'_intersection.jpg'))
+    # plt.clf()
 
-    plt.imshow(selected_regions, cmap='gray')
-    plt.show()
-    plt.clf()
+    # plt.imshow(selected_regions, cmap='gray')
+    # plt.show()
+    # plt.clf()
 
     #   if args.vis_save_path != "":
     #       image_name = os.path.split(image_path)[-1]
@@ -115,5 +128,5 @@ if __name__ == "__main__":
     
     image_path_list = glob.glob(os.path.join(args.image_dir, "*"))
     
-    for image_path in image_path_list:
+    for image_path in image_path_list[0:]:
         main(image_path, args)

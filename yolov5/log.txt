@@ -1,0 +1,478 @@
+Namespace(batch_size=1, img_size=[640, 640], weights='July6-yolov5s.pt')
+Torchscript export success, saved as July6-yolov5s.torchscript
+Fusing layers...
+Model Summary: 140 layers, 7.24767e+06 parameters, 6.61798e+06 gradients
+graph torch-jit-export (
+  %images[FLOAT, 1x4x640x640]
+) initializers (
+  %483[INT64, 1]
+  %484[INT64, 1]
+  %485[INT64, 1]
+  %486[INT64, 1]
+  %487[INT64, 1]
+  %488[INT64, 1]
+  %model.0.conv.conv.bias[FLOAT, 32]
+  %model.0.conv.conv.weight[FLOAT, 32x16x3x3]
+  %model.1.conv.bias[FLOAT, 64]
+  %model.1.conv.weight[FLOAT, 64x32x3x3]
+  %model.10.conv.bias[FLOAT, 256]
+  %model.10.conv.weight[FLOAT, 256x512x1x1]
+  %model.13.bn.bias[FLOAT, 256]
+  %model.13.bn.running_mean[FLOAT, 256]
+  %model.13.bn.running_var[FLOAT, 256]
+  %model.13.bn.weight[FLOAT, 256]
+  %model.13.cv1.conv.bias[FLOAT, 128]
+  %model.13.cv1.conv.weight[FLOAT, 128x512x1x1]
+  %model.13.cv2.weight[FLOAT, 128x512x1x1]
+  %model.13.cv3.weight[FLOAT, 128x128x1x1]
+  %model.13.cv4.conv.bias[FLOAT, 256]
+  %model.13.cv4.conv.weight[FLOAT, 256x256x1x1]
+  %model.13.m.0.cv1.conv.bias[FLOAT, 128]
+  %model.13.m.0.cv1.conv.weight[FLOAT, 128x128x1x1]
+  %model.13.m.0.cv2.conv.bias[FLOAT, 128]
+  %model.13.m.0.cv2.conv.weight[FLOAT, 128x128x3x3]
+  %model.14.conv.bias[FLOAT, 128]
+  %model.14.conv.weight[FLOAT, 128x256x1x1]
+  %model.17.bn.bias[FLOAT, 128]
+  %model.17.bn.running_mean[FLOAT, 128]
+  %model.17.bn.running_var[FLOAT, 128]
+  %model.17.bn.weight[FLOAT, 128]
+  %model.17.cv1.conv.bias[FLOAT, 64]
+  %model.17.cv1.conv.weight[FLOAT, 64x256x1x1]
+  %model.17.cv2.weight[FLOAT, 64x256x1x1]
+  %model.17.cv3.weight[FLOAT, 64x64x1x1]
+  %model.17.cv4.conv.bias[FLOAT, 128]
+  %model.17.cv4.conv.weight[FLOAT, 128x128x1x1]
+  %model.17.m.0.cv1.conv.bias[FLOAT, 64]
+  %model.17.m.0.cv1.conv.weight[FLOAT, 64x64x1x1]
+  %model.17.m.0.cv2.conv.bias[FLOAT, 64]
+  %model.17.m.0.cv2.conv.weight[FLOAT, 64x64x3x3]
+  %model.18.bias[FLOAT, 18]
+  %model.18.weight[FLOAT, 18x128x1x1]
+  %model.19.conv.bias[FLOAT, 128]
+  %model.19.conv.weight[FLOAT, 128x128x3x3]
+  %model.2.bn.bias[FLOAT, 64]
+  %model.2.bn.running_mean[FLOAT, 64]
+  %model.2.bn.running_var[FLOAT, 64]
+  %model.2.bn.weight[FLOAT, 64]
+  %model.2.cv1.conv.bias[FLOAT, 32]
+  %model.2.cv1.conv.weight[FLOAT, 32x64x1x1]
+  %model.2.cv2.weight[FLOAT, 32x64x1x1]
+  %model.2.cv3.weight[FLOAT, 32x32x1x1]
+  %model.2.cv4.conv.bias[FLOAT, 64]
+  %model.2.cv4.conv.weight[FLOAT, 64x64x1x1]
+  %model.2.m.0.cv1.conv.bias[FLOAT, 32]
+  %model.2.m.0.cv1.conv.weight[FLOAT, 32x32x1x1]
+  %model.2.m.0.cv2.conv.bias[FLOAT, 32]
+  %model.2.m.0.cv2.conv.weight[FLOAT, 32x32x3x3]
+  %model.21.bn.bias[FLOAT, 256]
+  %model.21.bn.running_mean[FLOAT, 256]
+  %model.21.bn.running_var[FLOAT, 256]
+  %model.21.bn.weight[FLOAT, 256]
+  %model.21.cv1.conv.bias[FLOAT, 128]
+  %model.21.cv1.conv.weight[FLOAT, 128x256x1x1]
+  %model.21.cv2.weight[FLOAT, 128x256x1x1]
+  %model.21.cv3.weight[FLOAT, 128x128x1x1]
+  %model.21.cv4.conv.bias[FLOAT, 256]
+  %model.21.cv4.conv.weight[FLOAT, 256x256x1x1]
+  %model.21.m.0.cv1.conv.bias[FLOAT, 128]
+  %model.21.m.0.cv1.conv.weight[FLOAT, 128x128x1x1]
+  %model.21.m.0.cv2.conv.bias[FLOAT, 128]
+  %model.21.m.0.cv2.conv.weight[FLOAT, 128x128x3x3]
+  %model.22.bias[FLOAT, 18]
+  %model.22.weight[FLOAT, 18x256x1x1]
+  %model.23.conv.bias[FLOAT, 256]
+  %model.23.conv.weight[FLOAT, 256x256x3x3]
+  %model.25.bn.bias[FLOAT, 512]
+  %model.25.bn.running_mean[FLOAT, 512]
+  %model.25.bn.running_var[FLOAT, 512]
+  %model.25.bn.weight[FLOAT, 512]
+  %model.25.cv1.conv.bias[FLOAT, 256]
+  %model.25.cv1.conv.weight[FLOAT, 256x512x1x1]
+  %model.25.cv2.weight[FLOAT, 256x512x1x1]
+  %model.25.cv3.weight[FLOAT, 256x256x1x1]
+  %model.25.cv4.conv.bias[FLOAT, 512]
+  %model.25.cv4.conv.weight[FLOAT, 512x512x1x1]
+  %model.25.m.0.cv1.conv.bias[FLOAT, 256]
+  %model.25.m.0.cv1.conv.weight[FLOAT, 256x256x1x1]
+  %model.25.m.0.cv2.conv.bias[FLOAT, 256]
+  %model.25.m.0.cv2.conv.weight[FLOAT, 256x256x3x3]
+  %model.26.bias[FLOAT, 18]
+  %model.26.weight[FLOAT, 18x512x1x1]
+  %model.3.conv.bias[FLOAT, 128]
+  %model.3.conv.weight[FLOAT, 128x64x3x3]
+  %model.4.bn.bias[FLOAT, 128]
+  %model.4.bn.running_mean[FLOAT, 128]
+  %model.4.bn.running_var[FLOAT, 128]
+  %model.4.bn.weight[FLOAT, 128]
+  %model.4.cv1.conv.bias[FLOAT, 64]
+  %model.4.cv1.conv.weight[FLOAT, 64x128x1x1]
+  %model.4.cv2.weight[FLOAT, 64x128x1x1]
+  %model.4.cv3.weight[FLOAT, 64x64x1x1]
+  %model.4.cv4.conv.bias[FLOAT, 128]
+  %model.4.cv4.conv.weight[FLOAT, 128x128x1x1]
+  %model.4.m.0.cv1.conv.bias[FLOAT, 64]
+  %model.4.m.0.cv1.conv.weight[FLOAT, 64x64x1x1]
+  %model.4.m.0.cv2.conv.bias[FLOAT, 64]
+  %model.4.m.0.cv2.conv.weight[FLOAT, 64x64x3x3]
+  %model.4.m.1.cv1.conv.bias[FLOAT, 64]
+  %model.4.m.1.cv1.conv.weight[FLOAT, 64x64x1x1]
+  %model.4.m.1.cv2.conv.bias[FLOAT, 64]
+  %model.4.m.1.cv2.conv.weight[FLOAT, 64x64x3x3]
+  %model.4.m.2.cv1.conv.bias[FLOAT, 64]
+  %model.4.m.2.cv1.conv.weight[FLOAT, 64x64x1x1]
+  %model.4.m.2.cv2.conv.bias[FLOAT, 64]
+  %model.4.m.2.cv2.conv.weight[FLOAT, 64x64x3x3]
+  %model.5.conv.bias[FLOAT, 256]
+  %model.5.conv.weight[FLOAT, 256x128x3x3]
+  %model.6.bn.bias[FLOAT, 256]
+  %model.6.bn.running_mean[FLOAT, 256]
+  %model.6.bn.running_var[FLOAT, 256]
+  %model.6.bn.weight[FLOAT, 256]
+  %model.6.cv1.conv.bias[FLOAT, 128]
+  %model.6.cv1.conv.weight[FLOAT, 128x256x1x1]
+  %model.6.cv2.weight[FLOAT, 128x256x1x1]
+  %model.6.cv3.weight[FLOAT, 128x128x1x1]
+  %model.6.cv4.conv.bias[FLOAT, 256]
+  %model.6.cv4.conv.weight[FLOAT, 256x256x1x1]
+  %model.6.m.0.cv1.conv.bias[FLOAT, 128]
+  %model.6.m.0.cv1.conv.weight[FLOAT, 128x128x1x1]
+  %model.6.m.0.cv2.conv.bias[FLOAT, 128]
+  %model.6.m.0.cv2.conv.weight[FLOAT, 128x128x3x3]
+  %model.6.m.1.cv1.conv.bias[FLOAT, 128]
+  %model.6.m.1.cv1.conv.weight[FLOAT, 128x128x1x1]
+  %model.6.m.1.cv2.conv.bias[FLOAT, 128]
+  %model.6.m.1.cv2.conv.weight[FLOAT, 128x128x3x3]
+  %model.6.m.2.cv1.conv.bias[FLOAT, 128]
+  %model.6.m.2.cv1.conv.weight[FLOAT, 128x128x1x1]
+  %model.6.m.2.cv2.conv.bias[FLOAT, 128]
+  %model.6.m.2.cv2.conv.weight[FLOAT, 128x128x3x3]
+  %model.7.conv.bias[FLOAT, 512]
+  %model.7.conv.weight[FLOAT, 512x256x3x3]
+  %model.8.cv1.conv.bias[FLOAT, 256]
+  %model.8.cv1.conv.weight[FLOAT, 256x512x1x1]
+  %model.8.cv2.conv.bias[FLOAT, 512]
+  %model.8.cv2.conv.weight[FLOAT, 512x1024x1x1]
+  %model.9.bn.bias[FLOAT, 512]
+  %model.9.bn.running_mean[FLOAT, 512]
+  %model.9.bn.running_var[FLOAT, 512]
+  %model.9.bn.weight[FLOAT, 512]
+  %model.9.cv1.conv.bias[FLOAT, 256]
+  %model.9.cv1.conv.weight[FLOAT, 256x512x1x1]
+  %model.9.cv2.weight[FLOAT, 256x512x1x1]
+  %model.9.cv3.weight[FLOAT, 256x256x1x1]
+  %model.9.cv4.conv.bias[FLOAT, 512]
+  %model.9.cv4.conv.weight[FLOAT, 512x512x1x1]
+  %model.9.m.0.cv1.conv.bias[FLOAT, 256]
+  %model.9.m.0.cv1.conv.weight[FLOAT, 256x256x1x1]
+  %model.9.m.0.cv2.conv.bias[FLOAT, 256]
+  %model.9.m.0.cv2.conv.weight[FLOAT, 256x256x3x3]
+) {
+  %167 = Constant[value = <Tensor>]()
+  %168 = Constant[value = <Tensor>]()
+  %169 = Constant[value = <Tensor>]()
+  %170 = Constant[value = <Tensor>]()
+  %171 = Slice(%images, %168, %169, %167, %170)
+  %172 = Constant[value = <Tensor>]()
+  %173 = Constant[value = <Tensor>]()
+  %174 = Constant[value = <Tensor>]()
+  %175 = Constant[value = <Tensor>]()
+  %176 = Slice(%171, %173, %174, %172, %175)
+  %177 = Constant[value = <Tensor>]()
+  %178 = Constant[value = <Tensor>]()
+  %179 = Constant[value = <Tensor>]()
+  %180 = Constant[value = <Tensor>]()
+  %181 = Slice(%images, %178, %179, %177, %180)
+  %182 = Constant[value = <Tensor>]()
+  %183 = Constant[value = <Tensor>]()
+  %184 = Constant[value = <Tensor>]()
+  %185 = Constant[value = <Tensor>]()
+  %186 = Slice(%181, %183, %184, %182, %185)
+  %187 = Constant[value = <Tensor>]()
+  %188 = Constant[value = <Tensor>]()
+  %189 = Constant[value = <Tensor>]()
+  %190 = Constant[value = <Tensor>]()
+  %191 = Slice(%images, %188, %189, %187, %190)
+  %192 = Constant[value = <Tensor>]()
+  %193 = Constant[value = <Tensor>]()
+  %194 = Constant[value = <Tensor>]()
+  %195 = Constant[value = <Tensor>]()
+  %196 = Slice(%191, %193, %194, %192, %195)
+  %197 = Constant[value = <Tensor>]()
+  %198 = Constant[value = <Tensor>]()
+  %199 = Constant[value = <Tensor>]()
+  %200 = Constant[value = <Tensor>]()
+  %201 = Slice(%images, %198, %199, %197, %200)
+  %202 = Constant[value = <Tensor>]()
+  %203 = Constant[value = <Tensor>]()
+  %204 = Constant[value = <Tensor>]()
+  %205 = Constant[value = <Tensor>]()
+  %206 = Slice(%201, %203, %204, %202, %205)
+  %207 = Concat[axis = 1](%176, %186, %196, %206)
+  %208 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%207, %model.0.conv.conv.weight, %model.0.conv.conv.bias)
+  %209 = LeakyRelu[alpha = 0.100000001490116](%208)
+  %210 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [2, 2]](%209, %model.1.conv.weight, %model.1.conv.bias)
+  %211 = LeakyRelu[alpha = 0.100000001490116](%210)
+  %212 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%211, %model.2.cv1.conv.weight, %model.2.cv1.conv.bias)
+  %213 = LeakyRelu[alpha = 0.100000001490116](%212)
+  %214 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%213, %model.2.m.0.cv1.conv.weight, %model.2.m.0.cv1.conv.bias)
+  %215 = LeakyRelu[alpha = 0.100000001490116](%214)
+  %216 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%215, %model.2.m.0.cv2.conv.weight, %model.2.m.0.cv2.conv.bias)
+  %217 = LeakyRelu[alpha = 0.100000001490116](%216)
+  %218 = Add(%213, %217)
+  %219 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%218, %model.2.cv3.weight)
+  %220 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%211, %model.2.cv2.weight)
+  %221 = Concat[axis = 1](%219, %220)
+  %222 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%221, %model.2.bn.weight, %model.2.bn.bias, %model.2.bn.running_mean, %model.2.bn.running_var)
+  %223 = LeakyRelu[alpha = 0.100000001490116](%222)
+  %224 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%223, %model.2.cv4.conv.weight, %model.2.cv4.conv.bias)
+  %225 = LeakyRelu[alpha = 0.100000001490116](%224)
+  %226 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [2, 2]](%225, %model.3.conv.weight, %model.3.conv.bias)
+  %227 = LeakyRelu[alpha = 0.100000001490116](%226)
+  %228 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%227, %model.4.cv1.conv.weight, %model.4.cv1.conv.bias)
+  %229 = LeakyRelu[alpha = 0.100000001490116](%228)
+  %230 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%229, %model.4.m.0.cv1.conv.weight, %model.4.m.0.cv1.conv.bias)
+  %231 = LeakyRelu[alpha = 0.100000001490116](%230)
+  %232 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%231, %model.4.m.0.cv2.conv.weight, %model.4.m.0.cv2.conv.bias)
+  %233 = LeakyRelu[alpha = 0.100000001490116](%232)
+  %234 = Add(%229, %233)
+  %235 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%234, %model.4.m.1.cv1.conv.weight, %model.4.m.1.cv1.conv.bias)
+  %236 = LeakyRelu[alpha = 0.100000001490116](%235)
+  %237 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%236, %model.4.m.1.cv2.conv.weight, %model.4.m.1.cv2.conv.bias)
+  %238 = LeakyRelu[alpha = 0.100000001490116](%237)
+  %239 = Add(%234, %238)
+  %240 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%239, %model.4.m.2.cv1.conv.weight, %model.4.m.2.cv1.conv.bias)
+  %241 = LeakyRelu[alpha = 0.100000001490116](%240)
+  %242 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%241, %model.4.m.2.cv2.conv.weight, %model.4.m.2.cv2.conv.bias)
+  %243 = LeakyRelu[alpha = 0.100000001490116](%242)
+  %244 = Add(%239, %243)
+  %245 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%244, %model.4.cv3.weight)
+  %246 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%227, %model.4.cv2.weight)
+  %247 = Concat[axis = 1](%245, %246)
+  %248 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%247, %model.4.bn.weight, %model.4.bn.bias, %model.4.bn.running_mean, %model.4.bn.running_var)
+  %249 = LeakyRelu[alpha = 0.100000001490116](%248)
+  %250 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%249, %model.4.cv4.conv.weight, %model.4.cv4.conv.bias)
+  %251 = LeakyRelu[alpha = 0.100000001490116](%250)
+  %252 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [2, 2]](%251, %model.5.conv.weight, %model.5.conv.bias)
+  %253 = LeakyRelu[alpha = 0.100000001490116](%252)
+  %254 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%253, %model.6.cv1.conv.weight, %model.6.cv1.conv.bias)
+  %255 = LeakyRelu[alpha = 0.100000001490116](%254)
+  %256 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%255, %model.6.m.0.cv1.conv.weight, %model.6.m.0.cv1.conv.bias)
+  %257 = LeakyRelu[alpha = 0.100000001490116](%256)
+  %258 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%257, %model.6.m.0.cv2.conv.weight, %model.6.m.0.cv2.conv.bias)
+  %259 = LeakyRelu[alpha = 0.100000001490116](%258)
+  %260 = Add(%255, %259)
+  %261 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%260, %model.6.m.1.cv1.conv.weight, %model.6.m.1.cv1.conv.bias)
+  %262 = LeakyRelu[alpha = 0.100000001490116](%261)
+  %263 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%262, %model.6.m.1.cv2.conv.weight, %model.6.m.1.cv2.conv.bias)
+  %264 = LeakyRelu[alpha = 0.100000001490116](%263)
+  %265 = Add(%260, %264)
+  %266 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%265, %model.6.m.2.cv1.conv.weight, %model.6.m.2.cv1.conv.bias)
+  %267 = LeakyRelu[alpha = 0.100000001490116](%266)
+  %268 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%267, %model.6.m.2.cv2.conv.weight, %model.6.m.2.cv2.conv.bias)
+  %269 = LeakyRelu[alpha = 0.100000001490116](%268)
+  %270 = Add(%265, %269)
+  %271 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%270, %model.6.cv3.weight)
+  %272 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%253, %model.6.cv2.weight)
+  %273 = Concat[axis = 1](%271, %272)
+  %274 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%273, %model.6.bn.weight, %model.6.bn.bias, %model.6.bn.running_mean, %model.6.bn.running_var)
+  %275 = LeakyRelu[alpha = 0.100000001490116](%274)
+  %276 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%275, %model.6.cv4.conv.weight, %model.6.cv4.conv.bias)
+  %277 = LeakyRelu[alpha = 0.100000001490116](%276)
+  %278 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [2, 2]](%277, %model.7.conv.weight, %model.7.conv.bias)
+  %279 = LeakyRelu[alpha = 0.100000001490116](%278)
+  %280 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%279, %model.8.cv1.conv.weight, %model.8.cv1.conv.bias)
+  %281 = LeakyRelu[alpha = 0.100000001490116](%280)
+  %282 = MaxPool[ceil_mode = 0, kernel_shape = [5, 5], pads = [2, 2, 2, 2], strides = [1, 1]](%281)
+  %283 = MaxPool[ceil_mode = 0, kernel_shape = [9, 9], pads = [4, 4, 4, 4], strides = [1, 1]](%281)
+  %284 = MaxPool[ceil_mode = 0, kernel_shape = [13, 13], pads = [6, 6, 6, 6], strides = [1, 1]](%281)
+  %285 = Concat[axis = 1](%281, %282, %283, %284)
+  %286 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%285, %model.8.cv2.conv.weight, %model.8.cv2.conv.bias)
+  %287 = LeakyRelu[alpha = 0.100000001490116](%286)
+  %288 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%287, %model.9.cv1.conv.weight, %model.9.cv1.conv.bias)
+  %289 = LeakyRelu[alpha = 0.100000001490116](%288)
+  %290 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%289, %model.9.m.0.cv1.conv.weight, %model.9.m.0.cv1.conv.bias)
+  %291 = LeakyRelu[alpha = 0.100000001490116](%290)
+  %292 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%291, %model.9.m.0.cv2.conv.weight, %model.9.m.0.cv2.conv.bias)
+  %293 = LeakyRelu[alpha = 0.100000001490116](%292)
+  %294 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%293, %model.9.cv3.weight)
+  %295 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%287, %model.9.cv2.weight)
+  %296 = Concat[axis = 1](%294, %295)
+  %297 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%296, %model.9.bn.weight, %model.9.bn.bias, %model.9.bn.running_mean, %model.9.bn.running_var)
+  %298 = LeakyRelu[alpha = 0.100000001490116](%297)
+  %299 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%298, %model.9.cv4.conv.weight, %model.9.cv4.conv.bias)
+  %300 = LeakyRelu[alpha = 0.100000001490116](%299)
+  %301 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%300, %model.10.conv.weight, %model.10.conv.bias)
+  %302 = LeakyRelu[alpha = 0.100000001490116](%301)
+  %303 = Shape(%302)
+  %304 = Constant[value = <Scalar Tensor []>]()
+  %305 = Gather[axis = 0](%303, %304)
+  %306 = Cast[to = 1](%305)
+  %307 = Constant[value = <Scalar Tensor []>]()
+  %308 = Mul(%306, %307)
+  %309 = Cast[to = 1](%308)
+  %310 = Floor(%309)
+  %311 = Shape(%302)
+  %312 = Constant[value = <Scalar Tensor []>]()
+  %313 = Gather[axis = 0](%311, %312)
+  %314 = Cast[to = 1](%313)
+  %315 = Constant[value = <Scalar Tensor []>]()
+  %316 = Mul(%314, %315)
+  %317 = Cast[to = 1](%316)
+  %318 = Floor(%317)
+  %319 = Unsqueeze[axes = [0]](%310)
+  %320 = Unsqueeze[axes = [0]](%318)
+  %321 = Concat[axis = 0](%319, %320)
+  %322 = Constant[value = <Tensor>]()
+  %323 = Shape(%302)
+  %324 = Constant[value = <Tensor>]()
+  %325 = Constant[value = <Tensor>]()
+  %326 = Constant[value = <Tensor>]()
+  %327 = Slice(%323, %325, %326, %324)
+  %328 = Cast[to = 7](%321)
+  %329 = Concat[axis = 0](%327, %328)
+  %330 = Constant[value = <Tensor>]()
+  %331 = Resize[coordinate_transformation_mode = 'asymmetric', cubic_coeff_a = -0.75, mode = 'nearest', nearest_mode = 'floor'](%302, %322, %330, %329)
+  %332 = Concat[axis = 1](%331, %277)
+  %333 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%332, %model.13.cv1.conv.weight, %model.13.cv1.conv.bias)
+  %334 = LeakyRelu[alpha = 0.100000001490116](%333)
+  %335 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%334, %model.13.m.0.cv1.conv.weight, %model.13.m.0.cv1.conv.bias)
+  %336 = LeakyRelu[alpha = 0.100000001490116](%335)
+  %337 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%336, %model.13.m.0.cv2.conv.weight, %model.13.m.0.cv2.conv.bias)
+  %338 = LeakyRelu[alpha = 0.100000001490116](%337)
+  %339 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%338, %model.13.cv3.weight)
+  %340 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%332, %model.13.cv2.weight)
+  %341 = Concat[axis = 1](%339, %340)
+  %342 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%341, %model.13.bn.weight, %model.13.bn.bias, %model.13.bn.running_mean, %model.13.bn.running_var)
+  %343 = LeakyRelu[alpha = 0.100000001490116](%342)
+  %344 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%343, %model.13.cv4.conv.weight, %model.13.cv4.conv.bias)
+  %345 = LeakyRelu[alpha = 0.100000001490116](%344)
+  %346 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%345, %model.14.conv.weight, %model.14.conv.bias)
+  %347 = LeakyRelu[alpha = 0.100000001490116](%346)
+  %348 = Shape(%347)
+  %349 = Constant[value = <Scalar Tensor []>]()
+  %350 = Gather[axis = 0](%348, %349)
+  %351 = Cast[to = 1](%350)
+  %352 = Constant[value = <Scalar Tensor []>]()
+  %353 = Mul(%351, %352)
+  %354 = Cast[to = 1](%353)
+  %355 = Floor(%354)
+  %356 = Shape(%347)
+  %357 = Constant[value = <Scalar Tensor []>]()
+  %358 = Gather[axis = 0](%356, %357)
+  %359 = Cast[to = 1](%358)
+  %360 = Constant[value = <Scalar Tensor []>]()
+  %361 = Mul(%359, %360)
+  %362 = Cast[to = 1](%361)
+  %363 = Floor(%362)
+  %364 = Unsqueeze[axes = [0]](%355)
+  %365 = Unsqueeze[axes = [0]](%363)
+  %366 = Concat[axis = 0](%364, %365)
+  %367 = Constant[value = <Tensor>]()
+  %368 = Shape(%347)
+  %369 = Constant[value = <Tensor>]()
+  %370 = Constant[value = <Tensor>]()
+  %371 = Constant[value = <Tensor>]()
+  %372 = Slice(%368, %370, %371, %369)
+  %373 = Cast[to = 7](%366)
+  %374 = Concat[axis = 0](%372, %373)
+  %375 = Constant[value = <Tensor>]()
+  %376 = Resize[coordinate_transformation_mode = 'asymmetric', cubic_coeff_a = -0.75, mode = 'nearest', nearest_mode = 'floor'](%347, %367, %375, %374)
+  %377 = Concat[axis = 1](%376, %251)
+  %378 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%377, %model.17.cv1.conv.weight, %model.17.cv1.conv.bias)
+  %379 = LeakyRelu[alpha = 0.100000001490116](%378)
+  %380 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%379, %model.17.m.0.cv1.conv.weight, %model.17.m.0.cv1.conv.bias)
+  %381 = LeakyRelu[alpha = 0.100000001490116](%380)
+  %382 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%381, %model.17.m.0.cv2.conv.weight, %model.17.m.0.cv2.conv.bias)
+  %383 = LeakyRelu[alpha = 0.100000001490116](%382)
+  %384 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%383, %model.17.cv3.weight)
+  %385 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%377, %model.17.cv2.weight)
+  %386 = Concat[axis = 1](%384, %385)
+  %387 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%386, %model.17.bn.weight, %model.17.bn.bias, %model.17.bn.running_mean, %model.17.bn.running_var)
+  %388 = LeakyRelu[alpha = 0.100000001490116](%387)
+  %389 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%388, %model.17.cv4.conv.weight, %model.17.cv4.conv.bias)
+  %390 = LeakyRelu[alpha = 0.100000001490116](%389)
+  %391 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%390, %model.18.weight, %model.18.bias)
+  %392 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [2, 2]](%390, %model.19.conv.weight, %model.19.conv.bias)
+  %393 = LeakyRelu[alpha = 0.100000001490116](%392)
+  %394 = Concat[axis = 1](%393, %347)
+  %395 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%394, %model.21.cv1.conv.weight, %model.21.cv1.conv.bias)
+  %396 = LeakyRelu[alpha = 0.100000001490116](%395)
+  %397 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%396, %model.21.m.0.cv1.conv.weight, %model.21.m.0.cv1.conv.bias)
+  %398 = LeakyRelu[alpha = 0.100000001490116](%397)
+  %399 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%398, %model.21.m.0.cv2.conv.weight, %model.21.m.0.cv2.conv.bias)
+  %400 = LeakyRelu[alpha = 0.100000001490116](%399)
+  %401 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%400, %model.21.cv3.weight)
+  %402 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%394, %model.21.cv2.weight)
+  %403 = Concat[axis = 1](%401, %402)
+  %404 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%403, %model.21.bn.weight, %model.21.bn.bias, %model.21.bn.running_mean, %model.21.bn.running_var)
+  %405 = LeakyRelu[alpha = 0.100000001490116](%404)
+  %406 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%405, %model.21.cv4.conv.weight, %model.21.cv4.conv.bias)
+  %407 = LeakyRelu[alpha = 0.100000001490116](%406)
+  %408 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%407, %model.22.weight, %model.22.bias)
+  %409 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [2, 2]](%407, %model.23.conv.weight, %model.23.conv.bias)
+  %410 = LeakyRelu[alpha = 0.100000001490116](%409)
+  %411 = Concat[axis = 1](%410, %302)
+  %412 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%411, %model.25.cv1.conv.weight, %model.25.cv1.conv.bias)
+  %413 = LeakyRelu[alpha = 0.100000001490116](%412)
+  %414 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%413, %model.25.m.0.cv1.conv.weight, %model.25.m.0.cv1.conv.bias)
+  %415 = LeakyRelu[alpha = 0.100000001490116](%414)
+  %416 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%415, %model.25.m.0.cv2.conv.weight, %model.25.m.0.cv2.conv.bias)
+  %417 = LeakyRelu[alpha = 0.100000001490116](%416)
+  %418 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%417, %model.25.cv3.weight)
+  %419 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%411, %model.25.cv2.weight)
+  %420 = Concat[axis = 1](%418, %419)
+  %421 = BatchNormalization[epsilon = 9.99999974737875e-05, momentum = 0.970000028610229](%420, %model.25.bn.weight, %model.25.bn.bias, %model.25.bn.running_mean, %model.25.bn.running_var)
+  %422 = LeakyRelu[alpha = 0.100000001490116](%421)
+  %423 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%422, %model.25.cv4.conv.weight, %model.25.cv4.conv.bias)
+  %424 = LeakyRelu[alpha = 0.100000001490116](%423)
+  %425 = Conv[dilations = [1, 1], group = 1, kernel_shape = [1, 1], pads = [0, 0, 0, 0], strides = [1, 1]](%424, %model.26.weight, %model.26.bias)
+  %426 = Shape(%425)
+  %427 = Constant[value = <Scalar Tensor []>]()
+  %428 = Gather[axis = 0](%426, %427)
+  %429 = Shape(%425)
+  %430 = Constant[value = <Scalar Tensor []>]()
+  %431 = Gather[axis = 0](%429, %430)
+  %432 = Shape(%425)
+  %433 = Constant[value = <Scalar Tensor []>]()
+  %434 = Gather[axis = 0](%432, %433)
+  %437 = Unsqueeze[axes = [0]](%428)
+  %440 = Unsqueeze[axes = [0]](%431)
+  %441 = Unsqueeze[axes = [0]](%434)
+  %442 = Concat[axis = 0](%437, %483, %484, %440, %441)
+  %443 = Reshape(%425, %442)
+  %output = Transpose[perm = [0, 1, 3, 4, 2]](%443)
+  %445 = Shape(%408)
+  %446 = Constant[value = <Scalar Tensor []>]()
+  %447 = Gather[axis = 0](%445, %446)
+  %448 = Shape(%408)
+  %449 = Constant[value = <Scalar Tensor []>]()
+  %450 = Gather[axis = 0](%448, %449)
+  %451 = Shape(%408)
+  %452 = Constant[value = <Scalar Tensor []>]()
+  %453 = Gather[axis = 0](%451, %452)
+  %456 = Unsqueeze[axes = [0]](%447)
+  %459 = Unsqueeze[axes = [0]](%450)
+  %460 = Unsqueeze[axes = [0]](%453)
+  %461 = Concat[axis = 0](%456, %485, %486, %459, %460)
+  %462 = Reshape(%408, %461)
+  %463 = Transpose[perm = [0, 1, 3, 4, 2]](%462)
+  %464 = Shape(%391)
+  %465 = Constant[value = <Scalar Tensor []>]()
+  %466 = Gather[axis = 0](%464, %465)
+  %467 = Shape(%391)
+  %468 = Constant[value = <Scalar Tensor []>]()
+  %469 = Gather[axis = 0](%467, %468)
+  %470 = Shape(%391)
+  %471 = Constant[value = <Scalar Tensor []>]()
+  %472 = Gather[axis = 0](%470, %471)
+  %475 = Unsqueeze[axes = [0]](%466)
+  %478 = Unsqueeze[axes = [0]](%469)
+  %479 = Unsqueeze[axes = [0]](%472)
+  %480 = Concat[axis = 0](%475, %487, %488, %478, %479)
+  %481 = Reshape(%391, %480)
+  %482 = Transpose[perm = [0, 1, 3, 4, 2]](%481)
+  return %output, %463, %482
+}
+ONNX export success, saved as July6-yolov5s.onnx
+View with https://github.com/lutzroeder/netron
