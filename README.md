@@ -24,11 +24,11 @@ the proposed method is effective and better than SOTA methods.
 
 ### Block Diagram of this new method
 
-[BlockDiagram](images/Tree_Detection_block_diagram.jpg)
+![BlockDiagram](images/Tree_Detection_block_diagram.jpg)
 
 ### Network architecture of off-the-shelf YOLOv5
 
-[NetworkDiagram](images/Tree_Detection_yolov5.jpg)
+![NetworkDiagram](images/Tree_Detection_yolov5.jpg)
 
 ### Installation Instruction
 
